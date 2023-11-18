@@ -8,7 +8,13 @@ const mongoose = require('mongoose')
 
 const paymentController = require('./controller/Paymentcontroller')
 
-app.use(cors())
+app.use(cors(
+    {
+    origin:["https://projectbackend-git-main-nandithar2s-projects.vercel.app/"],
+    methods:["POST","GET],
+    credentials: true
+             }
+));
 app.use(express.json())
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: false, parameterLimit: 50000 }));
 app.use(bodyParser.json({ limit: '50mb' }));
